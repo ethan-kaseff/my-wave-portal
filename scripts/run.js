@@ -21,6 +21,9 @@ const main = async () => {
   await waveTxn.wait();
 
   waveCount = await waveContract.getTotalWaves
+
+  let wavers;
+  wavers = await waveContract.getWavers();
 };
 
 const runMain = async () => {

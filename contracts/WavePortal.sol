@@ -6,7 +6,7 @@ import "hardhat/console.sol";
 
 contract WavePortal {
     uint256 totalWaves;
-    // uint256[] wavers;
+    address[] wavers;
 
     constructor() {
         console.log("This is exciting, it's my first smart contract!");
@@ -14,7 +14,7 @@ contract WavePortal {
 
     function wave() public {
         totalWaves += 1;
-        // wavers.push(msg.sender);
+        wavers.push(msg.sender);
         console.log("%s has waved!", msg.sender);
     }
 
@@ -23,7 +23,10 @@ contract WavePortal {
         return totalWaves;
     }
 
-    // function getWavers() public view {
-    //     console.log("Look at all these wavers!", wavers);
-    // }
+    function getWavers() public view returns (uint256) {
+        for (uint i=0; i<wavers.length; i++) {
+            console.log("Waver: ",  i, "....... ", wavers[i]);
+        }
+        return 45;
+    }
 }
